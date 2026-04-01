@@ -648,7 +648,7 @@ style={{ height: "56px", width: "56px", borderRadius: "12px", objectFit: "contai
                 <CardContent className="h-80">
                   <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
-                      <Pie data={stageData} dataKey="value" nameKey="name" outerRadius={90} label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}>
+                      <Pie data={stageData} dataKey="value" nameKey="name" outerRadius={90} label={({ name, percent }) => `${name} ${((percent ?? 0) * 100).toFixed(0)}%`}>
                         {stageData.map((_, i) => <Cell key={i} fill={CHART_COLORS[i % CHART_COLORS.length]} />)}
                       </Pie>
                       <Tooltip contentStyle={{ backgroundColor: "#111", border: `1px solid ${LIME}44`, borderRadius: 12 }} />
